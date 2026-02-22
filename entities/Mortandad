@@ -1,0 +1,36 @@
+{
+  "name": "Mortandad",
+  "type": "object",
+  "properties": {
+    "fecha": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de la mortandad"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "novillo",
+        "toro",
+        "ternero",
+        "ternera",
+        "vaca",
+        "vaquillona",
+        "mixto"
+      ],
+      "description": "Categor\u00eda del animal"
+    },
+    "cantidad": {
+      "type": "number",
+      "description": "Cantidad de animales muertos"
+    },
+    "descripcion": {
+      "type": "string",
+      "description": "Causa o descripci\u00f3n"
+    }
+  },
+  "required": [
+    "fecha",
+    "cantidad"
+  ]
+}

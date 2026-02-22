@@ -1,0 +1,25 @@
+{
+  "name": "Proveedor",
+  "type": "object",
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "description": "Nombre del campo o proveedor"
+    },
+    "ubicacion": {
+      "type": "string",
+      "description": "Ubicaci\u00f3n del campo"
+    },
+    "telefono": {
+      "type": "string",
+      "description": "Tel\u00e9fono de contacto"
+    },
+    "notas": {
+      "type": "string",
+      "description": "Notas adicionales"
+    }
+  },
+  "required": [
+    "nombre"
+  ]
+}

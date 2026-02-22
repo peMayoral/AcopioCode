@@ -1,0 +1,28 @@
+{
+  "name": "GastoExtraordinario",
+  "type": "object",
+  "properties": {
+    "fecha": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha del gasto"
+    },
+    "descripcion": {
+      "type": "string",
+      "description": "Descripci\u00f3n del gasto"
+    },
+    "monto": {
+      "type": "number",
+      "description": "Monto del gasto"
+    },
+    "notas": {
+      "type": "string",
+      "description": "Notas adicionales"
+    }
+  },
+  "required": [
+    "fecha",
+    "descripcion",
+    "monto"
+  ]
+}

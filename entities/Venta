@@ -1,0 +1,113 @@
+{
+  "name": "Venta",
+  "type": "object",
+  "properties": {
+    "fecha": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de venta"
+    },
+    "comprador": {
+      "type": "string"
+    },
+    "animales": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "categoria": {
+            "type": "string",
+            "enum": [
+              "novillo",
+              "toro",
+              "ternero",
+              "ternera",
+              "vaca",
+              "vaquillona",
+              "mixto"
+            ]
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "peso_total_kg": {
+            "type": "number"
+          },
+          "precio_por_kg": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal_venta": {
+      "type": "number"
+    },
+    "aplica_iva": {
+      "type": "boolean"
+    },
+    "iva_venta": {
+      "type": "number"
+    },
+    "gastos_venta": {
+      "type": "number"
+    },
+    "descripcion_gastos": {
+      "type": "string"
+    },
+    "total_venta": {
+      "type": "number"
+    },
+    "medio_pago": {
+      "type": "string",
+      "enum": [
+        "efectivo",
+        "transferencia",
+        "cheque",
+        "pagare",
+        "otro"
+      ]
+    },
+    "notas": {
+      "type": "string"
+    },
+    "plazos_pago": {
+      "type": "array",
+      "description": "Cuotas o plazos de cobro",
+      "items": {
+        "type": "object",
+        "properties": {
+          "descripcion": {
+            "type": "string"
+          },
+          "monto": {
+            "type": "number"
+          },
+          "fecha_vencimiento": {
+            "type": "string",
+            "format": "date"
+          },
+          "pagado": {
+            "type": "boolean"
+          },
+          "fecha_pago": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "cantidad_total_animales": {
+      "type": "number"
+    },
+    "peso_total": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "fecha",
+    "comprador"
+  ]
+}

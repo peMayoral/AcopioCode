@@ -1,0 +1,163 @@
+{
+  "name": "Compra",
+  "type": "object",
+  "properties": {
+    "fecha": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de compra"
+    },
+    "proveedor_id": {
+      "type": "string",
+      "description": "ID del proveedor/campo"
+    },
+    "proveedor_nombre": {
+      "type": "string",
+      "description": "Nombre del proveedor"
+    },
+    "animales": {
+      "type": "array",
+      "description": "Detalle de animales comprados",
+      "items": {
+        "type": "object",
+        "properties": {
+          "categoria": {
+            "type": "string",
+            "enum": [
+              "novillo",
+              "toro",
+              "ternero",
+              "ternera",
+              "vaca",
+              "vaquillona",
+              "mixto"
+            ]
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "peso_bruto_kg": {
+            "type": "number"
+          },
+          "desbaste_porcentaje": {
+            "type": "number"
+          },
+          "peso_neto_kg": {
+            "type": "number"
+          },
+          "precio_por_kg": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal_animales": {
+      "type": "number"
+    },
+    "aplica_iva_hacienda": {
+      "type": "boolean"
+    },
+    "iva_hacienda": {
+      "type": "number"
+    },
+    "comision_asociado": {
+      "type": "number"
+    },
+    "costo_flete": {
+      "type": "number"
+    },
+    "aplica_iva_flete": {
+      "type": "boolean"
+    },
+    "iva_flete": {
+      "type": "number"
+    },
+    "gastos_adicionales": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "concepto": {
+            "type": "string",
+            "enum": [
+              "tasas_provinciales",
+              "nafta_particular",
+              "rollos",
+              "veterinaria",
+              "pago_empleado",
+              "pago_contador",
+              "marcas_senal",
+              "rentas",
+              "senasa",
+              "otro"
+            ]
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "monto": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "total_gastos_adicionales": {
+      "type": "number"
+    },
+    "medio_pago": {
+      "type": "string",
+      "enum": [
+        "efectivo",
+        "transferencia",
+        "cheque",
+        "pagare",
+        "otro"
+      ]
+    },
+    "notas_pago": {
+      "type": "string"
+    },
+    "plazos_pago": {
+      "type": "array",
+      "description": "Cuotas o plazos de pago",
+      "items": {
+        "type": "object",
+        "properties": {
+          "descripcion": {
+            "type": "string"
+          },
+          "monto": {
+            "type": "number"
+          },
+          "fecha_vencimiento": {
+            "type": "string",
+            "format": "date"
+          },
+          "pagado": {
+            "type": "boolean"
+          },
+          "fecha_pago": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "total_compra": {
+      "type": "number"
+    },
+    "cantidad_total_animales": {
+      "type": "number"
+    },
+    "peso_total_neto": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "fecha",
+    "proveedor_nombre"
+  ]
+}
